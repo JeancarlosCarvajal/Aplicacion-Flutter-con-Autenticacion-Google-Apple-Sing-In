@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
                   onPressed: (){
                     print('jean: SingIn with Google'); 
                     // TODO: SignIn with Google
-
+                    
                   }
                 )
               ],

@@ -1,4 +1,4 @@
-package com.example.i_auth_app
+package com.nftlatinoamerica.fluttersigningoogleapple
 
 import io.flutter.embedding.android.FlutterActivity
 
