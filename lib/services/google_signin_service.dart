@@ -16,9 +16,18 @@ class GoogleSignInService {
   static Future<GoogleSignInAccount?> signInWithGooogle() async {
     try {
       final GoogleSignInAccount? account = await _googleSignIn.signIn();
-      print('jean: $account');
-      // TODO: idToken lo genera google al logearse una cuenta se debe tomar e introducirlo en el back end
+      if(account == null) return null;
       
+      // idToken lo genera google al logearse una cuenta se debe tomar e introducirlo en el back end
+      // obtnemos los token generados por google
+      final googleKey = await account.authentication;
+
+      print('jean: $account');
+      print('jean: ========= ID Token ========');
+      print('jean: ${googleKey.idToken}');
+
+      // TODO: llamar un servicio rest a bakcend con el id token   
+
       return account;
     } catch (e) {
       print('jean: Error Google SignIn, $e');
