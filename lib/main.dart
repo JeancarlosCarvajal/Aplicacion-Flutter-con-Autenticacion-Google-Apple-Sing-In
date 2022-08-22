@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:i_auth_app/services/google_signin_service.dart';
 
 void main() => runApp(const MyApp());
 
@@ -20,8 +21,8 @@ class MyApp extends StatelessWidget {
               icon: const Icon(FontAwesomeIcons.doorOpen),
               onPressed: (){
                 print('jean: SignOut with Google');
-                // TODO: Singout
-
+                // Singout
+                GoogleSignInService.signOut();
               }, 
             )
           ],
@@ -47,7 +48,8 @@ class MyApp extends StatelessWidget {
                   ),
                   onPressed: (){
                     print('jean: SingIn with Google'); 
-                    // TODO: SignIn with Google
+                    // SignIn with Google
+                    GoogleSignInService.signInWithGooogle();
                     
                   }
                 )
