@@ -74,4 +74,9 @@ dependencies {
     // https://console.firebase.google.com/project/flutter-sing-in-app/overview 
     implementation platform('com.google.firebase:firebase-bom:30.3.2')
     implementation 'com.google.firebase:firebase-analytics-ktx'
+
+    // Implementar esto https://gist.github.com/Klerith/b42574a36d6248654572d05890da4eb5 para signin de apple
+    // Sin esto me daba "Error registering plugin sign_in_with_apple, com.aboutyou.dart_packages.sign_in_with_apple.SignInWithApplePlugin"
+    // en el archivo android\app\src\main\java\io\flutter\plugins\GeneratedPluginRegistrant.java
+    implementation 'com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava'
 }

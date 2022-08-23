@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:i_auth_app/services/google_signin_service.dart';
+import 'package:i_auth_app/services/apple_signin_service.dart';
+import 'package:i_auth_app/services/google_signin_service.dart'; 
 
 void main() => runApp(const MyApp());
 
@@ -33,6 +34,8 @@ class MyApp extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                
+                // Android SignIn
                 SizedBox(
                   width: 300,
                   child: MaterialButton(
@@ -55,7 +58,14 @@ class MyApp extends StatelessWidget {
                       
                     }
                   ),
-                )
+                ),            
+                
+                // Apple SignIn
+                // SignInWithAppleButton(
+                //   onPressed: AppleSignInService.signIn,
+                // )
+
+
               ],
             ),
           ),
