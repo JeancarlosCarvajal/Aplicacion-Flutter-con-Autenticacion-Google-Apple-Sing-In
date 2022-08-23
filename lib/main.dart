@@ -19,39 +19,42 @@ class MyApp extends StatelessWidget {
           actions: [
             IconButton(
               icon: const Icon(FontAwesomeIcons.doorOpen),
-              onPressed: (){
+              onPressed: () async{
                 print('jean: SignOut with Google');
                 // Singout
-                GoogleSignInService.signOut();
+                await GoogleSignInService.signOut();
               }, 
             )
           ],
         ),
         body: Container(
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.all(15),
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                MaterialButton(
-                  splashColor: Colors.transparent,
-                  minWidth: double.infinity,
-                  height: 40,
-                  color: Colors.red,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Icon(FontAwesomeIcons.google, color: Colors.white),
-                      Text( '   SignIn with Google', style: TextStyle(color: Colors.white, fontSize: 17) )
-                    ],
+                SizedBox(
+                  width: 300,
+                  child: MaterialButton(
+                    splashColor: Colors.transparent,
+                    minWidth: double.infinity,
+                    height: 40,
+                    color: Colors.red,
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Icon(FontAwesomeIcons.google, color: Colors.white),
+                        Text( '   SignIn with Google', style: TextStyle(color: Colors.white, fontSize: 25) )
+                      ],
+                    ),
+                    onPressed: () async {
+                      print('jean: SingIn with Google'); 
+                      // SignIn with Google
+                      await GoogleSignInService.signInWithGooogle();
+                      
+                    }
                   ),
-                  onPressed: (){
-                    print('jean: SingIn with Google'); 
-                    // SignIn with Google
-                    GoogleSignInService.signInWithGooogle();
-                    
-                  }
                 )
               ],
             ),
